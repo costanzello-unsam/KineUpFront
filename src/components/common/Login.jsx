@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import logocortado from "../../assets/logo cortado.png";
 import { httpClient } from "../../api/httpClient.js";
 import AnimatedBackground from "../layout/AnimatedBackground.jsx";
 import { useAuth } from "../../auth/AuthContext";
@@ -101,92 +102,306 @@ function Login() {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center font-poppins overflow-hidden">
-      <AnimatedBackground
-        bgColor="#f0fdf4"
-        color1="#bbf7d0"
-        color2="#86efac"
-        color3="#4ade80"
-        color4="#22c55e"
-        speed={3}
-      />
+  <div className="relative min-h-screen flex items-center justify-center overflow-hidden font-poppins">
+    <AnimatedBackground
+      bgColor="#f0fdf4"
+      color1="#bbf7d0"
+      color2="#86efac"
+      color3="#4ade80"
+      color4="#22c55e"
+      speed={3}
+    />
 
-      <div className="bg-white/70 backdrop-blur-sm px-16 py-10 rounded-3xl shadow-lg w-96 flex flex-col items-center gap-4 z-10">
-        <img
-          src={logo}
-          alt="KineUp"
-          className="h-16 hover:scale-105 transition-transform duration-300"
-        />
+    <div className="relative z-10 w-full max-w-[1250px] px-8">
+      <div className="grid lg:grid-cols-[1.45fr_1fr] gap-8 items-stretch">
 
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-green-900 leading-tight">
-            ¡Qué bueno verte!
-          </h1>
-        </div>
+        {/* =======================
+            TARJETA IZQUIERDA
+        ======================= */}
 
-        {error && (
-          <p className="text-red-500 text-xs italic bg-red-50 p-2 rounded w-full border border-red-100">
-            {error}
-          </p>
-        )}
-
-        <form className="w-full flex flex-col gap-4" onSubmit={handleLogin}>
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-1 ml-1">
-              Usuario
-            </label>
-            <input
-              className="shadow-sm border border-gray-200 rounded-lg w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-[#007a3f] focus:ring-1 focus:ring-[#007a3f] transition-all"
-              type="text"
-              placeholder="Ingresá tu usuario"
-              value={usuario}
-              onChange={(e) => setUsuario(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <label className="block text-gray-700 text-sm font-bold mb-1 ml-1">
-              Contraseña
-            </label>
-            <input
-              className="shadow-sm border border-gray-200 rounded-lg w-full py-2 px-3 text-gray-700 focus:outline-none focus:border-[#007a3f] focus:ring-1 focus:ring-[#007a3f] transition-all"
-              type="password"
-              placeholder="**********"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-
-          <button
-            className="bg-[#007a3f] hover:bg-[#005a2f] active:scale-95 text-white font-bold py-3 rounded-lg transition-all mt-2 shadow-md hover:shadow-lg flex justify-center items-center cursor-pointer "
-            type="submit"
-          >
-            Iniciar Sesión
-          </button>
-        </form>
-
-        <div className="flex items-center w-full mt-2">
-          <div className="grow border-t border-gray-300"></div>
-          <span className="mx-4 text-gray-400 text-xs uppercase tracking-widest">
-            o bien
-          </span>
-          <div className="grow border-t border-gray-300"></div>
-        </div>
-
-        <GoogleLoginButton onSuccess={handleGoogleLogin} />
-
-        <button
-          className="text-sm text-gray-500 hover:text-green-800 transition-colors mt-2"
-          type="button"
-          onClick={() => navigate("/registrar-paciente")}
+        <div
+          className="
+            bg-white/90
+            backdrop-blur-md
+            rounded-[36px]
+            shadow-2xl
+            border
+            border-white/60
+            px-10
+            py-6
+            flex
+            flex-col
+            justify-center
+          "
         >
-          ¿No tenés cuenta?{" "}
-          <span className="font-bold underline">Registrate acá</span>
-        </button>
+          <div className="flex items-center gap-5 mb-8">
+
+            <img
+            src={logocortado}
+            alt="KineUp"
+            className="h-20 w-auto object-contain"
+          />
+
+            <div>
+              <h1 className="text-6xl font-bold tracking-tight">
+                <span className="text-[#007A3F]">
+                  Kine
+                </span>
+
+                <span className="text-[#3B82F6]">
+                  Up
+                </span>
+              </h1>
+            </div>
+
+          </div>
+
+          <span className="uppercase tracking-[7px] text-[#007A3F] font-semibold text-sm">
+            PROFESIONALES Y PACIENTES
+          </span>
+
+          <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-[#12352A] leading-[1.05]">
+            Tu recuperación
+            <br />
+            merece acompañamiento.
+          </h2>
+
+          <p className="mt-5 text-lg text-slate-600 leading-relaxed max-w-3xl">
+            KineUp conecta profesionales y pacientes en una misma plataforma.
+            Gestioná ejercicios, seguí la evolución clínica y mantené una
+            comunicación continua durante todo el proceso de rehabilitación.
+          </p>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+
+            <div className="bg-[#E7F7EF] text-[#007A3F] px-4 py-3 rounded-2xl text-sm font-semibold border border-[#B7E4CB]">
+              Seguimiento personalizado
+            </div>
+
+            <div className="bg-[#E7F7EF] text-[#007A3F] px-4 py-3 rounded-2xl text-sm font-semibold border border-[#B7E4CB]">
+              Vinculación mediante QR
+            </div>
+
+            <div className="bg-[#E7F7EF] text-[#007A3F] px-4 py-3 rounded-2xl text-sm font-semibold border border-[#B7E4CB]">
+              Evolución clínica
+            </div>
+
+            </div>
+          <div className="mt-10">
+
+            <h3 className="uppercase tracking-[4px] text-[#007A3F] font-semibold text-base mb-8">
+              ¿Cómo funciona?
+            </h3>
+
+            <div className="space-y-5">
+
+              <div className="flex items-center gap-5">
+                <div className="w-8 h-8 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
+                  1
+                </div>
+
+                <p className="text-lg text-slate-700">
+                  Creá tu cuenta como paciente o profesional.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-5">
+                <div className="w-11 h-11 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
+                  2
+                </div>
+
+                <p className="text-lg text-slate-700">
+                  Vinculá pacientes mediante QR de manera rápida.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-5">
+                <div className="w-11 h-11 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
+                  3
+                </div>
+
+                <p className="text-lg text-slate-700">
+                  Registrá ejercicios, avances y objetivos terapéuticos.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-5">
+                <div className="w-11 h-11 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
+                  4
+                </div>
+
+                <p className="text-lg text-slate-700">
+                  Monitoreá el progreso y acompañá cada etapa de recuperación.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* =======================
+            TARJETA LOGIN
+        ======================= */}
+
+        <div className="flex justify-center">
+
+          <div
+            className="
+              bg-white/95
+              backdrop-blur-md
+              rounded-[36px]
+              shadow-2xl
+              border
+              border-white/60
+              w-full
+              max-w-[450px]
+              px-10
+              py-8
+              flex
+              flex-col
+              justify-center
+            "
+          >
+
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-[#007A3F] font-semibold text-sm mb-6">
+              Profesionales y pacientes
+            </div>
+
+            <h2 className="text-6xl font-bold text-[#12352A] leading-[1.05]">
+              Bienvenido a
+              <br />
+              KineUp
+            </h2>
+
+            <p className="text-slate-500 mt-4 text-lg">
+              Ingresá a tu cuenta y continuá tu seguimiento.
+            </p>
+
+            {error && (
+              <div className="mt-5 bg-red-50 border border-red-200 rounded-xl p-3 text-red-600 text-sm">
+                {error}
+              </div>
+            )}
+
+            <form
+              className="flex flex-col gap-5 mt-8"
+              onSubmit={handleLogin}
+            >
+
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-slate-700">
+                  Usuario
+                </label>
+
+                <input
+                  type="text"
+                  placeholder="Usuario o correo"
+                  value={usuario}
+                  onChange={(e) => setUsuario(e.target.value)}
+                  required
+                  className="
+                    w-full
+                    h-12
+                    rounded-[24px]
+                    border
+                    border-slate-200
+                    px-6
+                    text-lg
+                    focus:outline-none
+                    focus:border-[#007A3F]
+                    focus:ring-4
+                    focus:ring-green-100
+                  "
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold mb-2 text-slate-700">
+                  Contraseña
+                </label>
+
+                <input
+                  type="password"
+                  placeholder="Ingresá tu contraseña"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="
+                    w-full
+                    h-16
+                    rounded-[24px]
+                    border
+                    border-slate-200
+                    px-6
+                    text-lg
+                    focus:outline-none
+                    focus:border-[#007A3F]
+                    focus:ring-4
+                    focus:ring-green-100
+                  "
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="
+                  w-full
+                  h-16
+                  rounded-[28px]
+                  bg-[#007A3F]
+                  hover:bg-[#006432]
+                  text-white
+                  font-semibold
+                  text-xl
+                  transition-all
+                  shadow-lg
+                "
+              >
+                Iniciar sesión
+              </button>
+
+            </form>
+
+            <div className="flex items-center my-8">
+
+              <div className="flex-1 border-t border-slate-200"></div>
+
+              <span className="px-4 text-xs uppercase tracking-wider text-slate-400">
+                o continuá con
+              </span>
+
+              <div className="flex-1 border-t border-slate-200"></div>
+
+            </div>
+
+            <GoogleLoginButton onSuccess={handleGoogleLogin} />
+
+            <div className="text-center mt-8">
+
+              <span className="text-slate-500">
+                ¿No tenés cuenta?
+              </span>
+
+              <button
+                type="button"
+                onClick={() => navigate("/registrar-paciente")}
+                className="ml-2 text-[#007A3F] font-semibold hover:underline"
+              >
+                Crear cuenta
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default Login;
