@@ -21,7 +21,7 @@ import HomeProfesional from "../views/profesional/HomeProfesional.jsx";
 import QRSection from "../views/profesional/QRSection.jsx";
 import Pacientes from "../views/profesional/Pacientes.jsx";
 import Tratamientos from "../views/profesional/Tratamientos.jsx";
-import DetallePaciente from "../views/profesional/DetallePaciente.jsx";
+import DetallePaciente from "../views/profesional/Detallepaciente.jsx";
 
 export default function AppRoutes() {
   return (
@@ -67,15 +67,9 @@ export default function AppRoutes() {
           <Route path="qr" element={<QRSection />} />
 
           <Route path="pacientes" element={<Pacientes />} />
-
-          <Route
-            path="pacientes/:idPaciente"
-            element={<DetallePaciente />}
-          />
-
-          <Route path="tratamientos" element={<Tratamientos />} />
-
           <Route path="perfil" element={<Profile />} />
+          <Route path="tratamientos" element={<Tratamientos />} />
+          <Route path="pacientes/:idPaciente" element={<DetallePaciente />} />
         </Route>
       </Route>
 

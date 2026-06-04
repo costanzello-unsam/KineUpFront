@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { Activity, Users, QrCode } from "lucide-react";
 import AnimatedBackground from "../../components/layout/AnimatedBackground.jsx";
 
 function Login() {
@@ -45,195 +44,101 @@ function Login() {
   };
 
   return (
-  <div className="min-h-screen bg-[#F7FAF8] flex items-center justify-center p-6">
+    <div className="relative h-screen flex items-center justify-center font-poppins overflow-hidden">
+      <AnimatedBackground
+        bgColor="#f0fdf4"
+        color1="#bbf7d0"
+        color2="#86efac"
+        color3="#4ade80"
+        color4="#22c55e"
+        speed={3}
+      />
+      <div className="bg-white/80 backdrop-blur-md rounded-3xl shadow-2xl w-full max-w-4xl flex animate-fade-in z-10 overflow-hidden mx-4">
+        {/* Panel izquierdo - Formulario */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-10 py-12 gap-6 bg-white/50">
+          <img
+            src={logo}
+            alt="KineUp"
+            className="h-14 hover:scale-105 transition-transform duration-300"
+          />
 
-    <div className="w-full max-w-7xl grid lg:grid-cols-2 gap-12 items-center">
-
-      {/* IZQUIERDA */}
-      <div className="px-4">
-
-        <img
-          src={logo}
-          alt="KineUp"
-          className="h-16 mb-10"
-        />
-
-        <p className="uppercase tracking-[5px] text-[#0A8F4D] font-semibold text-sm mb-6">
-          PROFESIONALES Y PACIENTES
-        </p>
-
-        <h1 className="text-6xl lg:text-7xl font-bold leading-[1.05] text-[#12352A]">
-          Recuperá el
-          <br />
-          movimiento.
-        </h1>
-
-        <h2 className="text-6xl lg:text-7xl font-bold leading-[1.05] text-[#0A8F4D]">
-          Acompañá
-          <br />
-          cada avance.
-        </h2>
-
-        <p className="mt-8 text-xl text-slate-600 max-w-xl leading-relaxed">
-          Una única plataforma para conectar profesionales
-          y pacientes durante todo el proceso de rehabilitación.
-        </p>
-
-        {/* Ilustración placeholder */}
-        <div className="mt-14 bg-white rounded-3xl p-8 shadow-sm border border-green-100">
-
-          <div className="grid gap-6">
-
-            <div className="flex items-center gap-4">
-              <div className="bg-green-100 p-3 rounded-2xl">
-                <Users size={24} className="text-[#0A8F4D]" />
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-slate-800">
-                  Conexión profesional-paciente
-                </h3>
-
-                <p className="text-slate-500 text-sm">
-                  Seguimiento compartido en tiempo real.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="bg-green-100 p-3 rounded-2xl">
-                <QrCode size={24} className="text-[#0A8F4D]" />
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-slate-800">
-                  Vinculación mediante QR
-                </h3>
-
-                <p className="text-slate-500 text-sm">
-                  Acceso rápido y sin configuraciones complejas.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="bg-green-100 p-3 rounded-2xl">
-                <Activity size={24} className="text-[#0A8F4D]" />
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-slate-800">
-                  Evolución organizada
-                </h3>
-
-                <p className="text-slate-500 text-sm">
-                  Visualizá avances y tratamientos.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* DERECHA */}
-      <div className="flex justify-center">
-
-        <div className="bg-white w-full max-w-md rounded-[32px] p-10 shadow-xl border border-slate-100">
-
-          <div className="text-center mb-8">
-
-            <img
-              src={logo}
-              alt="KineUp"
-              className="h-10 mx-auto mb-5"
-            />
-
-            <h2 className="text-4xl font-bold text-[#12352A]">
-              Bienvenido
-            </h2>
-
-            <p className="text-slate-500 mt-2">
-              Ingresá para continuar
+          <div className="text-center animate-fade-in [animation-delay:500ms]">
+            <h1 className="select-none text-3xl font-bold text-green-900">
+              Gestión Profesional
+            </h1>
+            <p className="text-gray-500 text-sm mt-1">
+              Ingresá a tu panel de control
             </p>
-
           </div>
 
           {error && (
-            <div className="mb-5 rounded-2xl border border-red-200 bg-red-50 p-4 text-red-600 text-sm">
+            <div className="text-red-500 text-xs font-semibold bg-red-50 p-3 rounded-xl w-full text-center border border-red-100 animate-shake">
               {error}
             </div>
           )}
 
-          <form
-            onSubmit={handleLogin}
-            className="space-y-5"
-          >
-
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                Usuario
+          <form className="w-full flex flex-col gap-5" onSubmit={handleLogin}>
+            <div className="animate-fade-in [animation-delay:600ms]">
+              <label className="block text-gray-700 text-sm font-bold mb-2 ml-1">
+                Usuario Profesional
               </label>
-
               <input
+                className="shadow-sm appearance-none border border-gray-200 rounded-xl w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:border-[#007a3f] focus:ring-1 focus:ring-[#007a3f] transition-all"
                 type="text"
+                placeholder="Nombre de usuario"
                 value={usuario}
                 onChange={(e) => setUsuario(e.target.value)}
-                placeholder="Ingresá tu usuario"
                 required
-                className="w-full h-14 rounded-2xl border border-slate-200 px-5 focus:outline-none focus:border-[#0A8F4D] focus:ring-4 focus:ring-green-50"
               />
             </div>
-
-            <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+            <div className="animate-fade-in [animation-delay:700ms]">
+              <label className="block text-gray-700 text-sm font-bold mb-2 ml-1">
                 Contraseña
               </label>
-
               <input
+                className="shadow-sm appearance-none border border-gray-200 rounded-xl w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:border-[#007a3f] focus:ring-1 focus:ring-[#007a3f] transition-all"
                 type="password"
+                placeholder="**********"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
                 required
-                className="w-full h-14 rounded-2xl border border-slate-200 px-5 focus:outline-none focus:border-[#0A8F4D] focus:ring-4 focus:ring-green-50"
               />
             </div>
-
             <button
+              className="cursor-pointer bg-[#007a3f] hover:bg-[#005a2f] active:scale-95 text-white font-bold text-lg py-3 px-4 rounded-xl transition-all shadow-lg hover:shadow-green-900/20 animate-fade-in [animation-delay:800ms]"
               type="submit"
-              className="w-full h-14 rounded-2xl bg-[#0A8F4D] hover:bg-[#08753F] text-white font-semibold text-lg transition-all"
             >
-              Iniciar sesión
+              Entrar al sistema
             </button>
-
           </form>
-
-          <div className="mt-8 text-center">
-
-            <span className="text-slate-500">
-              ¿No tenés cuenta?
-            </span>
-
-            <button
-              onClick={() => navigate("/register")}
-              className="ml-2 text-[#0A8F4D] font-semibold hover:underline"
-            >
-              Crear cuenta
-            </button>
-
-          </div>
-
         </div>
 
+        {/* Panel derecho - Bienvenida */}
+        <div className="hidden md:flex w-1/2 bg-[#007a3f] flex-col justify-center items-center gap-6 px-12 py-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 tracking-tighter"></div>
+
+          <h1 className="select-none text-4xl font-bold text-center text-white animate-fade-in [animation-delay:900ms]">
+            ¡Hola!
+          </h1>
+          <p className="select-none text-green-50 text-center leading-relaxed animate-fade-in [animation-delay:1000ms]">
+            Todo listo para seguir impulsando la recuperación de tus pacientes.
+          </p>
+
+          <div className="w-1/2 border-t border-white/20 my-2"></div>
+
+          <p className="select-none text-white/80 text-sm animate-fade-in [animation-delay:1100ms]">
+            ¿Eres nuevo en la plataforma?
+          </p>
+          <button
+            className="cursor-pointer bg-white text-[#007a3f] font-bold text-xl py-3 px-10 rounded-2xl transition-all hover:bg-green-50 active:scale-95 shadow-xl animate-fade-in [animation-delay:1200ms]"
+            onClick={() => navigate("/register")}
+          >
+            Crear mi cuenta
+          </button>
+        </div>
       </div>
-
     </div>
-
-  </div>
-);
+  );
 }
 
 export default Login;

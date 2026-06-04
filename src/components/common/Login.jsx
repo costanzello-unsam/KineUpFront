@@ -112,7 +112,7 @@ function Login() {
       speed={3}
     />
 
-    <div className="relative z-10 w-full max-w-[1250px] px-8">
+    <div className="relative z-10 w-full max-w-[1120px] px-6">
       <div className="grid lg:grid-cols-[1.45fr_1fr] gap-8 items-stretch">
 
         {/* =======================
@@ -127,8 +127,8 @@ function Login() {
             shadow-2xl
             border
             border-white/60
-            px-10
-            py-6
+            px-8
+            py-5
             flex
             flex-col
             justify-center
@@ -139,11 +139,11 @@ function Login() {
             <img
             src={logocortado}
             alt="KineUp"
-            className="h-20 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
 
             <div>
-              <h1 className="text-6xl font-bold tracking-tight">
+              <h1 className="text-5xl font-bold tracking-tight">
                 <span className="text-[#007A3F]">
                   Kine
                 </span>
@@ -160,13 +160,13 @@ function Login() {
             PROFESIONALES Y PACIENTES
           </span>
 
-          <h2 className="mt-5 text-4xl lg:text-5xl font-bold text-[#12352A] leading-[1.05]">
+          <h2 className="mt-4 text-3xl lg:text-4xl font-bold text-[#12352A] leading-[1.05]">
             Tu recuperación
             <br />
             merece acompañamiento.
           </h2>
 
-          <p className="mt-5 text-lg text-slate-600 leading-relaxed max-w-3xl">
+          <p className="mt-4 text-lg text-slate-600 leading-relaxed max-w-3xl">
             KineUp conecta profesionales y pacientes en una misma plataforma.
             Gestioná ejercicios, seguí la evolución clínica y mantené una
             comunicación continua durante todo el proceso de rehabilitación.
@@ -200,37 +200,37 @@ function Login() {
                   1
                 </div>
 
-                <p className="text-lg text-slate-700">
+                <p className="text-base text-slate-700">
                   Creá tu cuenta como paciente o profesional.
                 </p>
               </div>
 
               <div className="flex items-center gap-5">
-                <div className="w-11 h-11 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
+                <div className="w-8 h-8 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
                   2
                 </div>
 
-                <p className="text-lg text-slate-700">
+                <p className="text-base text-slate-700">
                   Vinculá pacientes mediante QR de manera rápida.
                 </p>
               </div>
 
               <div className="flex items-center gap-5">
-                <div className="w-11 h-11 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
+                <div className="w-8 h-8 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
                   3
                 </div>
 
-                <p className="text-lg text-slate-700">
+                <p className="text-base text-slate-700">
                   Registrá ejercicios, avances y objetivos terapéuticos.
                 </p>
               </div>
 
               <div className="flex items-center gap-5">
-                <div className="w-11 h-11 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
+                <div className="w-8 h-8 rounded-full bg-[#007A3F] text-white flex items-center justify-center font-bold">
                   4
                 </div>
 
-                <p className="text-lg text-slate-700">
+                <p className="text-base text-slate-700">
                   Monitoreá el progreso y acompañá cada etapa de recuperación.
                 </p>
               </div>
@@ -269,7 +269,7 @@ function Login() {
               Profesionales y pacientes
             </div>
 
-            <h2 className="text-6xl font-bold text-[#12352A] leading-[1.05]">
+            <h2 className="text-4xl font-bold text-[#12352A] leading-[1.05]">
               Bienvenido a
               <br />
               KineUp
